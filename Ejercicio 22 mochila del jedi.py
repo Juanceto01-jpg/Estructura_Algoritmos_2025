@@ -3,14 +3,10 @@ def usar_la_fuerza(mochila, objetos_sacados=0):
     if not mochila:
         return (False, objetos_sacados)
     
-  
     objeto = mochila.pop(0)
     objetos_sacados += 1
     
-    print(f"El Jedi saca un {objeto}...")
-    
-   
-    if objeto == "sable de luz":
+    if objeto == "Sable_de_luz":
         print("¡El Jedi encontró el sable de luz!")
         return (True, objetos_sacados)
     
@@ -18,17 +14,8 @@ def usar_la_fuerza(mochila, objetos_sacados=0):
     return usar_la_fuerza(mochila, objetos_sacados)
 
 
-mochila_rey = ["comida", "mapa", "brújula", "sable de luz", "ropa", "kit médico"]
-encontrado, cantidad = usar_la_fuerza(mochila_rey.copy())  
+saco_de_luke = ["Comida", "Agua", "Sable_de_luz"]
+encontrado, cantidad = usar_la_fuerza(saco_de_luke.copy())
 
-print(f"\nResultado:")
-print(f"¿Encontró el sable de luz?: {'Sí' if encontrado else 'No'}")
-print(f"Objetos sacados: {cantidad}")
-
-
-mochila_obiwan = ["comida", "mapa", "brújula", "ropa", "kit médico"]
-print("\nPrueba sin sable de luz:")
-encontrado, cantidad = usar_la_fuerza(mochila_obiwan.copy())
-print(f"\nResultado:")
-print(f"¿Encontró el sable de luz?: {'Sí' if encontrado else 'No'}")
-print(f"Objetos sacados: {cantidad}")
+print(f"¿encontro el sable de luz?: {"si" if encontrado else "no" }")
+print(f"Objetos sacados para encontrar el sable: {cantidad}")
